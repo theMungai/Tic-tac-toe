@@ -89,5 +89,11 @@ function checkWinner(){
 }
 
 function restartGame(){
-    
+    options = ["","","","","","","","",""];
+currentPlayer = `<i class="fa-solid fa-xmark"></i>`
+statusText.innerHTML = `${currentPlayer}'s turn`
+gridCells.forEach((cell) => {
+    cell.innerHTML = ""
+    running = true;
+})
 }
