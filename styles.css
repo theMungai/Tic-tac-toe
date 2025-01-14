@@ -97,4 +97,22 @@ body{
     transition: 1.5s;
 }
 
+/* ================== Media Queries ============ */
+/* ================== Mobile Device ============ */
+@media(max-width : 480px){
 
+    .main-container{
+        width: 90%;
+        height: auto;
+        text-align: center;
+        position: relative;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .main-container .game-container{
+        width: 100%;
+    }
+
+}
