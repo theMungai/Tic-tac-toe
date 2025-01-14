@@ -1,6 +1,8 @@
+const gameContainer = document.querySelector(".game-container");
 const gridCells = document.querySelectorAll(".grid-cell");
 const statusText = document.querySelector(".statusText");
 const restartBtn = document.querySelector(".restart-btn");
+
 const winConditions = [
     [0,1,2],
     [3,4,5],
@@ -77,6 +79,7 @@ function checkWinner(){
     if(roundWon){
         statusText.innerHTML = `${currentPlayer} wins`;
         running = false
+        gameContainer.classList.add("js-animate-board");
     }
     else if(!options.includes("")){
         statusText.textContent = "Draw";
@@ -90,10 +93,12 @@ function checkWinner(){
 
 function restartGame(){
     options = ["","","","","","","","",""];
-currentPlayer = `<i class="fa-solid fa-xmark"></i>`
-statusText.innerHTML = `${currentPlayer}'s turn`
-gridCells.forEach((cell) => {
-    cell.innerHTML = ""
-    running = true;
-})
+    currentPlayer = `<i class="fa-solid fa-xmark"></i>`
+    statusText.innerHTML = `${currentPlayer}'s turn`
+    gameContainer.classList.remove("js-animate-board");
+
+    gridCells.forEach((cell) => {
+        cell.innerHTML = ""
+        running = true;
+    })
 }

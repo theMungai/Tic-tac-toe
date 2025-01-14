@@ -70,9 +70,7 @@ body{
     width: 400px;
     height: 400px;
     position: relative;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%);
+    margin: 0px auto;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 20px 20px 20px rgba(0,0,0,0.2);
@@ -96,6 +94,28 @@ body{
     font-size: 6rem;
     transition: 1.5s;
 }
+
+.main-container .js-animate-board {
+    animation-name: animate-board;
+    animation-iteration-count: 1; /* Run the animation once */
+    animation-fill-mode: forwards; /* Keep element in final position */
+    animation-duration: 2s;
+    transform-style: preserve-3d; /* Enable 3D transformations */
+    perspective: 500px; /* Set perspective for 3D effect */
+}
+
+@keyframes animate-board {
+    0% {
+        box-shadow: none;
+        transform: rotateX(0deg) rotateY(0deg); /* No movement or rotation */
+    }
+    100% {
+        box-shadow: 20px 20px 20px 20px rgba(0,0,0,0.2);
+        transform: rotateX(20deg) rotateY(20deg); /* Move 10px along X and rotate 30deg on Y-axis */
+    }
+}
+
+
 
 /* ================== Media Queries ============ */
 /* ================== Mobile Device ============ */
