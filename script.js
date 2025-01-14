@@ -63,9 +63,31 @@ function checkWinner(){
         const cellA = options[condition[0]]
         const cellB = options[condition[1]]
         const cellC = options[condition[2]]
+
+        if (cellA === "" || cellB === "" || cellC === ""){
+            continue
+        }
+
+        if(cellA ===  cellB && cellB === cellC){
+            roundWon = true;
+            break
+        }
+    }
+
+    if(roundWon){
+        statusText.innerHTML = `${currentPlayer} wins`;
+        running = false
+    }
+    else if(!options.includes("")){
+        statusText.textContent = "Draw";
+        running = false
+    }
+
+    else{
+        changePlayer()
     }
 }
 
 function restartGame(){
-
+    
 }
